@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import './index.css';
 import App from './App';
 import Reducers from './reducers'
-import registerServiceWorker from './registerServiceWorker';
+
 
 let store = createStore(Reducers);
 

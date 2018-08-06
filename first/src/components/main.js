@@ -5,6 +5,8 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.store = this.props.store;
+    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
   handleLogin() {
     this.store.dispatch(login());
