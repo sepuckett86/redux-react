@@ -5,13 +5,12 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.store = this.props.store;
-    this.handleLogin = this.handleLogin.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
   }
-  handleLogin() {
-    this.store.dispatch(login());
+  // arrow function precludes need to bind(this).
+  handleLogin = () => {
+    this.store.dispatch(login('You just logged in'));
   }
-  handleLogout() {
+  handleLogout = () => {
     this.store.dispatch(logout());
   }
   checkAuth() {
@@ -21,13 +20,14 @@ class Main extends Component {
       )
     } else {
       return (
-        <p>No - Not loggen in</p>
+        <p>No - Not logged in</p>
       )
     }
   }
   render() {
     return (
       <div>
+        <br />
         <button onClick={this.handleLogin}>Log In</button>
         <br />
         <button onClick={this.handleLogout}>Log Out</button>
