@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { login, logout } from '../actions/index';
+import { login, logout, auth } from '../actions/index';
 
 class Main extends Component {
   constructor(props) {
@@ -12,6 +12,9 @@ class Main extends Component {
   }
   handleLogout = () => {
     this.store.dispatch(logout());
+  }
+  handleAuth = () => {
+    this.store.dispatch(auth());
   }
   checkAuth() {
     if (this.store.getState().authenticated) {
@@ -31,6 +34,8 @@ class Main extends Component {
         <button onClick={this.handleLogin}>Log In</button>
         <br />
         <button onClick={this.handleLogout}>Log Out</button>
+        <br />
+        <button onClick={this.handleAuth}>Toggle Auth</button>
         <br />
       {this.checkAuth()}
       </div>
