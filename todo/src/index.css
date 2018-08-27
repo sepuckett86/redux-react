@@ -26,3 +26,13 @@ body {
 .App-intro {
   font-size: large;
 }
+
+textarea {
+  font-size: large;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

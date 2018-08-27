@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class Input extends Component {
   constructor(props){
     super(props)
-    this.state = {}
+    this.state = {input: ''}
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleChange(event) {
@@ -15,12 +16,23 @@ class Input extends Component {
   }
 
   handleClick(event) {
-
+    this.props.addTodo(this.state.input)
+    this.setState({
+      input: ''
+    })
   }
+
+  handleKeyPress(event) {
+  if(event.key === 'Enter'){
+    this.handleClick(event)
+  }
+}
 
   render() {
     return(<div>
-      <textarea name="input" onChange={this.handleChange}/>
+      <p>Enter your To-Do</p>
+      <textarea name="input" value={this.state.input} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
+      <br />
       <button name="submitButton" onClick={this.handleClick}>Submit</button>
     </div>)
   }
