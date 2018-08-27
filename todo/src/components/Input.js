@@ -30,8 +30,8 @@ class Input extends Component {
 
   render() {
     return(<div>
-      <p>Enter your To-Do</p>
-      <textarea name="input" value={this.state.input} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
+      <p>Enter Item</p>
+      <input name="input" value={this.state.input} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
       <br />
       <button name="submitButton" onClick={this.handleClick}>Submit</button>
     </div>)

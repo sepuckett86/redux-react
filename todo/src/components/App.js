@@ -7,9 +7,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">A simple React App using Redux for state management</h1>
+          <h1 className="App-title">To-Do List</h1>
         </header>
+        <div className="no-print">
         <InputContainer />
+      </div>
         <ListContainer />
       </div>
     );
