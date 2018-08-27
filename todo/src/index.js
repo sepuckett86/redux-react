@@ -13,3 +13,8 @@ ReactDOM.render(
     <App />
   </Provider>, document.getElementById('root')
 );
+
+// Allows us to see the state in the console
+store.subscribe(() => {
+  console.log(store.getState());
+});

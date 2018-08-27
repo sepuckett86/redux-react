@@ -26,3 +26,21 @@ body {
 .App-intro {
   font-size: large;
 }
+
+input {
+  font-size: large;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+@media print
+{
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
