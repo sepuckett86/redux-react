@@ -1,5 +1,19 @@
 export const addTodo = (text) => {
   return {
-    type: 'ADDTODO', 
+    type: 'ADDTODO',
     text}
+}
+
+export const removeTodo = (id) => {
+  return {
+    type: 'REMOVETODO',
+    id
+  }
+}
+
+export const toggleCheck = (id) => {
+  return {
+    type: 'TOGGLECHECK',
+    id
+  }
 }

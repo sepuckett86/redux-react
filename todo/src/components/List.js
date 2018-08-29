@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoContainer from '../containers/TodoContainer';
 
 
 class List extends Component {
@@ -8,7 +9,11 @@ class List extends Component {
     return(<div>
       <ul style={style}>
         {todos.map(todo => {
-          return <li key={todo.index}>{todo.text}</li>
+          return (
+            <li key={todo.id}>
+            <TodoContainer id={todo.id} />
+            </li>
+          )
         })}
       </ul>
     </div>)

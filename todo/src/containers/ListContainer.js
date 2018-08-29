@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { removeTodo } from '../actions/index';
 import List from '../components/List';
 
 const mapStateToProps = state => {
@@ -7,10 +8,17 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    removeTodo: (index) => {
+      dispatch(removeTodo(index))
+    }
+  }
+}
 
 const ListContainer = connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(List)
 
 export default ListContainer;
