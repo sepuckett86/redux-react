@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleVisibilityFilter } from '../actions/index';
+import { toggleVisibilityFilter, clearChecked } from '../actions/index';
 import Filter from '../components/Filter';
 
 const mapStateToProps = state => {
@@ -11,7 +11,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     toggleVisibilityFilter: () =>
-      dispatch(toggleVisibilityFilter())
+      dispatch(toggleVisibilityFilter()),
+    clearChecked: () =>
+      dispatch(clearChecked())
   }
 }
 

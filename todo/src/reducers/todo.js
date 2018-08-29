@@ -27,6 +27,15 @@ function todo(state = [], action) {
         }
         return todo
       })
+    case 'CLEARCHECKED':
+      return state.filter(function(todo) {
+        if (todo.strike) {
+          return false; // skip
+        }
+        return true;
+      }).map(function(todo) {
+        return todo; 
+      });
     default:
       return state
   }

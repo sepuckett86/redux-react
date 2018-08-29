@@ -23,3 +23,9 @@ export const toggleVisibilityFilter = () => {
     type: 'TOGGLEVF'
   }
 }
+
+export const clearChecked = () => {
+  return {
+    type: 'CLEARCHECKED'
+  }
+}

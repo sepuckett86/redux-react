@@ -17,15 +17,17 @@ class List extends Component {
             </li>
           )
           }) :
-          todos.map(todo => {
-          if (!todo.strike) {
-            return (
-              <li key={todo.id}>
-              <TodoContainer id={todo.id} />
-              </li>
-            )
+          todos.filter(todo => {
+          if (todo.strike) {
+            return false}
+            return true}).map(todo => {
+              return (
+                <li key={todo.id}>
+                <TodoContainer id={todo.id} />
+                </li>
+              )
+            })
           }
-          })}
 
 
       </ul>

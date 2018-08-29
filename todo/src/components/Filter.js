@@ -11,6 +11,9 @@ class Filter extends Component {
     if (event.target.name === 'toggle') {
       this.props.toggleVisibilityFilter();
     }
+    if (event.target.name === 'clear') {
+      this.props.clearChecked();
+    }
   }
 
   render() {
@@ -23,6 +26,8 @@ class Filter extends Component {
     }
     return(<div>
       <button style={buttonStyle} name='toggle' className='no-print' onClick={this.handleClick}>{text}</button>
+      {' '}
+      <button style={buttonStyle} name='clear' className='no-print' onClick={this.handleClick}>Clear Checked</button>
     </div>)
   }
 }
