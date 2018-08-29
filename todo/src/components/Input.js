@@ -29,11 +29,12 @@ class Input extends Component {
 }
 
   render() {
+    const buttonStyle = {margin: '1%', fontSize: '16px'}
     return(<div>
       <p>Enter Item</p>
       <input name="input" value={this.state.input} onChange={this.handleChange} onKeyPress={this.handleKeyPress}/>
       <br />
-      <button name="submitButton" onClick={this.handleClick}>Submit</button>
+      <button style={buttonStyle} name="submitButton" onClick={this.handleClick}>Add</button>
     </div>)
   }
 }
