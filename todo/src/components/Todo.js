@@ -27,11 +27,11 @@ class Todo extends Component {
     return(
       <div>
         {!strike ? text : <strike>{text}</strike>}{' '}
-        <button name='check' onClick={this.handleClick}>
+        <button className='no-print' name='check' onClick={this.handleClick}>
           ✔
         </button>
         {' '}
-        <button name='remove' onClick={this.handleClick}>
+        <button className='no-print' name='remove' onClick={this.handleClick}>
           X
         </button>
       </div>
