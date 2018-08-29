@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InputContainer from '../containers/InputContainer';
 import ListContainer from '../containers/ListContainer';
+import FilterContainer from '../containers/FilterContainer';
 
 class App extends Component {
   render() {
@@ -12,7 +13,9 @@ class App extends Component {
         <div className="no-print">
           <InputContainer />
         </div>
+        <FilterContainer />
         <ListContainer />
+
       </div>
     );
   }

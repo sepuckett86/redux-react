@@ -17,3 +17,9 @@ export const toggleCheck = (id) => {
     id
   }
 }
+
+export const toggleVisibilityFilter = () => {
+  return {
+    type: 'TOGGLEVF'
+  }
+}

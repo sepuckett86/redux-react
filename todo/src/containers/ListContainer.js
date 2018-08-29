@@ -4,7 +4,8 @@ import List from '../components/List';
 
 const mapStateToProps = state => {
   return {
-    todo: state.todo
+    todo: state.todo,
+    filter: state.visibilityFilter
   }
 }
 
