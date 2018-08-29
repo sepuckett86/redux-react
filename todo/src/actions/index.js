@@ -17,3 +17,15 @@ export const toggleCheck = (id) => {
     id
   }
 }
+
+export const toggleVisibilityFilter = () => {
+  return {
+    type: 'TOGGLEVF'
+  }
+}
+
+export const clearChecked = () => {
+  return {
+    type: 'CLEARCHECKED'
+  }
+}
