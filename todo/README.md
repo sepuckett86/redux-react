@@ -14,6 +14,8 @@ A simple To-Do App made with React and Redux
 * Remove button for each To-Do
 * Check button for each To-Do (strike-through)
 * Print layout excludes input box and buttons
+* Visibility Filter button
+* Clear checked button
   
 ## To Use:
 ```
