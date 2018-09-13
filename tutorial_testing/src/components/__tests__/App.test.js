@@ -1,8 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+
 import App from '../App';
+import CommentBox from '../CommentBox';
 
 it('shows a comment box', () => {
+  // wrapped means additional functionality
+  // included with component
+  // shallow is a shallow render (no children)
+  const wrapped = shallow(<App />);
+  // matcher is toEqual
+  expect(wrapped.find(CommentBox).length).toEqual(1);
+});
+
+// Commented out code below is enzyme-less
+
+// import ReactDOM from 'react-dom';
+/* it('shows a comment box', () => {
   // Declare a fake div for testing
   const div = document.createElement('div');
 
@@ -23,3 +37,5 @@ it('shows a comment box', () => {
   // Clean up to improve test performance
   ReactDOM.unmountComponentAtNode(div);
 });
+
+*/
