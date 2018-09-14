@@ -1,14 +1,20 @@
 import React from 'react';
 import { mount } from 'enzyme';
-
 import CommentBox from 'components/CommentBox';
+import Root from 'Root';
 
 let wrapped;
 
 // Could also use shallow in this case
 // Pass beforeEach an arrow function
+// Root is required to access redux store
+// Root contains the Provider tag
 beforeEach(() => {
-  wrapped = mount(<CommentBox />);
+  wrapped = mount(
+    <Root>
+      <CommentBox />
+    </Root>
+  );
 });
 
 // Component clean up when using mount
