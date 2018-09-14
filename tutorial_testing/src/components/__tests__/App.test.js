@@ -1,23 +1,30 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from '../App';
-import CommentBox from '../CommentBox';
-import CommentList from '../CommentList';
+import App from 'components/App';
+import CommentBox from 'components/CommentBox';
+import CommentList from 'components/CommentList';
 
-it('shows a comment box', () => {
+// Initialize variable outside of beforeEach function
+let wrapped;
+
+// beforeEach function
+// DRY: don't repeat yourself
+beforeEach(() => {
   // wrapped means additional functionality
   // included with component
   // shallow is a shallow render (no children)
-  const wrapped = shallow(<App />);
+  wrapped = shallow(<App />);
+});
+
+it('shows a comment box', () => {
   // matcher is toEqual
   expect(wrapped.find(CommentBox).length).toEqual(1);
 });
 
 it('shows a comment list', () => {
-  const wrapped = shallow(<App />);
   expect(wrapped.find(CommentList).length).toEqual(1);
-})
+});
 
 // Commented out code below is enzyme-less
 
