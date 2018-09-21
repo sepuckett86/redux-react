@@ -36,12 +36,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Life Manual</h1>
+          <h1 className="App-title">🌺 Life Manual</h1>
         </header>
         <div className="container center">
           <div className="button-bar">
-            <button name='newBookButton' onClick={this.handleClick} className='btn btn-primary'>New Book</button>
-            <button name='viewBookButton' onClick={this.handleClick} className='btn btn-secondary'>View Books</button>
+            <button name='newBookButton' onClick={this.handleClick} className='btn btn-outline-primary'>📕 New Book</button>
+            <button name='viewBookButton' onClick={this.handleClick} className='btn btn-outline-success'>📚 View Books</button>
           </div>
         </div>
         <div className="container">
