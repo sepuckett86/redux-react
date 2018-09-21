@@ -3,7 +3,13 @@
 }
 
 .App-header {
-  background-color: #222;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0e0b21+1,5c177c+100 */
+  background: #0e0b21; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #0e0b21 1%, #5c177c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #0e0b21 1%,#5c177c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #0e0b21 1%,#5c177c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e0b21', endColorstr='#5c177c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
   padding: 20px;
   color: white;
   text-align: center;
@@ -15,4 +21,17 @@
 
 .App-intro {
   font-size: large;
+}
+
+.center {
+
+}
+
+.button-bar {
+  margin: 2%;
+  text-align: center;
+}
+
+.button-bar .btn {
+  margin: 5px
 }

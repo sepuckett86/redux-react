@@ -14,6 +14,10 @@ const initialState =
     {
       title: 'Two',
       description: 'Cool-beans!'
+    },
+    {
+      title: 'Three',
+      description: 'Neato'
     }
   ]
 }
