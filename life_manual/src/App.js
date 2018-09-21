@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import SectionList from './SectionList';
+
 class App extends Component {
   render() {
     return (
@@ -8,6 +10,9 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Life Manual</h1>
         </header>
+        <div>
+          <SectionList />
+        </div>
       </div>
     );
   }
