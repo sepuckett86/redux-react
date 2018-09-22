@@ -6,5 +6,5 @@ import bookReducer from './book';
 export default combineReducers({
   sections: sectionReducer,
   display: displayReducer,
-  book: bookReducer
+  books: bookReducer
 })

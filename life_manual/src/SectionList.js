@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import * as actions from './actions';
 
 class SectionList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       sectionsInMyBook: [],
-      sectionsToAdd: this.props.sections
+      sectionsToAdd: this.props.sections,
+      title: ''
     }
     this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleClick(event) {
@@ -45,6 +48,20 @@ class SectionList extends Component {
         sectionsInMyBook: newMyBook
       });
     }
+    if (event.target.name === 'makeBook') {
+      const book = {
+        sections: this.state.sectionsInMyBook,
+        title: this.state.title
+      }
+      this.props.addBook(book);
+      this.props.changeDisplay('viewBooks');
+    }
+  }
+
+  handleChange(event) {
+    this.setState({
+      title: event.target.value
+    })
   }
 
   renderSections(name) {
@@ -55,7 +72,7 @@ class SectionList extends Component {
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">{section.title}</h5>
             </div>
-            <p className="mb-1">{section.id}</p>
+
           </button>
         );
       })
@@ -67,7 +84,7 @@ class SectionList extends Component {
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">{section.title}</h5>
             </div>
-            <p className="mb-1">{section.id}</p>
+
           </button>
         );
       })
@@ -77,15 +94,20 @@ class SectionList extends Component {
   render() {
     return (
       <div>
-        <h4>Sections to Add</h4>
+        <h3>Sections to Add</h3>
             <div className="list-group">
               {this.renderSections('Sections to Add')}
             </div>
         <br />
-        <h4>Sections in My Book</h4>
+        <h3>Sections in My Book</h3>
             <div className="list-group">
               {this.renderSections('Sections in My Book')}
             </div>
+        <br />
+        <h3>Title of Book</h3>
+        <input name='title' onChange={this.handleChange} value={this.state.title} />
+        <br />
+        <button name="makeBook" onClick={this.handleClick} className='btn btn-outline-primary button-single'>Make Book</button>
       </div>
     );
   }
@@ -94,4 +116,4 @@ class SectionList extends Component {
 function mapStateToProps(state) {
   return { sections: state.sections };
 }
-export default connect(mapStateToProps)(SectionList);
+export default connect(mapStateToProps, actions)(SectionList);

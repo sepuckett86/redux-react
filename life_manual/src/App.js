@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from './actions';
 
 import SectionList from './SectionList';
+import BookList from './BookList';
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,12 @@ class App extends Component {
             <SectionList />
           </div>
         )
+      case 'viewBooks':
+        return (
+          <div>
+            <BookList />
+          </div>
+        )
       default:
         return <div></div>
     }
@@ -29,7 +36,7 @@ class App extends Component {
       this.props.changeDisplay('newBook');
     }
     if (event.target.name === 'viewBookButton') {
-      this.props.changeDisplay('clean');
+      this.props.changeDisplay('viewBooks');
     }
   }
   render() {
