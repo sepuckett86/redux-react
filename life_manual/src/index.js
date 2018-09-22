@@ -9,15 +9,20 @@ const initialState =
   [
     {
       title: 'One',
-      description: 'Awesome-sauce'
+      description: 'Awesome-sauce',
+      tags: ['source-specific'],
+      examples: [''],
+      id: '1'
     },
     {
       title: 'Two',
-      description: 'Cool-beans!'
+      description: 'Cool-beans!',
+      id: '2'
     },
     {
       title: 'Three',
-      description: 'Neato'
+      description: 'Neato',
+      id: '3'
     }
   ]
 }
