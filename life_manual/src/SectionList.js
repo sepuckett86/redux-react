@@ -80,7 +80,7 @@ class SectionList extends Component {
     if (name === 'Sections to Add') {
       return this.state.sectionsToAdd.map((section) => {
         return (
-          <button name='add' key={section.id} data-key={section.id} onClick={this.handleClick} className="list-group-item list-group-item-action flex-column align-items-start">
+          <button type='button' data-trigger='hover' data-toggle="popover" data-content={section.description} name='add' key={section.id} data-key={section.id} onClick={this.handleClick} className="list-group-item list-group-item-action flex-column align-items-start">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">{section.title}</h5>
             </div>
