@@ -17,6 +17,7 @@
 
 .App-title {
   font-size: 1.5em;
+  color: white
 }
 
 .button-bar {
@@ -31,4 +32,15 @@
 .button-single {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.btn-clean {
+  border: transparent;
+  background: transparent;
+}
+
+.btn-clean:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
 }

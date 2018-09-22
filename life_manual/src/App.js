@@ -3,6 +3,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 
+import Home from './Home';
 import SectionList from './SectionList';
 import BookList from './BookList';
 
@@ -14,7 +15,7 @@ class App extends Component {
   renderDisplay() {
     switch(this.props.display) {
       case 'clean':
-        return <div></div>
+        return <div><Home /></div>
       case 'newBook':
         return (
           <div>
@@ -43,7 +44,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title"><span role="img" aria-label="jsx-a11y/accessible-emoji">🌺</span> Life Manual</h1>
+          <button type="button" className='btn btn-clean'>
+            <h1 className="App-title">
+              <span role="img" aria-label="jsx-a11y/accessible-emoji">🌺</span> Life Manual
+            </h1>
+          </button>
         </header>
         <div className="container center">
           <div className="button-bar">
