@@ -44,3 +44,10 @@
   border: none;
   box-shadow: none;
 }
+button h1 span {
+  pointer-events: none;
+}
+
+button h1 {
+  pointer-events: none;
+}

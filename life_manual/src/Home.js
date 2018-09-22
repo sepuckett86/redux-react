@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 class Home extends Component {
   render() {
@@ -7,8 +6,10 @@ class Home extends Component {
       <div>
         <h3>Mission Statement</h3>
         <hr />
-        <p>I am creating a web-app to make a life manual. </p>
-        <p>This is a book one writes about themselves that talks about what is important. We spend so much time being influenced by others but what if we could be influenced by ourselves? This is one way to do so. </p>
+
+        <p>Ever wish life came with a manual on how to be you? </p>
+        <p>A life manual as defined here is a book one writes about themselves that talks about what is important. We spend so much time being influenced by others but what if we could be influenced by ourselves?</p>
+        <p>The purpose of this app is to guide users on how to structure a life manual, and to inspire and generate content.</p>
         <p>Note: each of these sections could be an App in itself. Potential for expansion.</p>
       </div>
     );

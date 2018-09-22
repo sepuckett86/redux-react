@@ -15,7 +15,9 @@ class App extends Component {
   renderDisplay() {
     switch(this.props.display) {
       case 'clean':
-        return <div><Home /></div>
+        return <div>
+          <Home />
+        </div>
       case 'newBook':
         return (
           <div>
@@ -39,12 +41,15 @@ class App extends Component {
     if (event.target.name === 'viewBookButton') {
       this.props.changeDisplay('viewBooks');
     }
+    if (event.target.name === 'home') {
+      this.props.changeDisplay('clean');
+    }
   }
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <button type="button" className='btn btn-clean'>
+          <button name='home' onClick={this.handleClick} type="button" className='btn btn-clean'>
             <h1 className="App-title">
               <span role="img" aria-label="jsx-a11y/accessible-emoji">🌺</span> Life Manual
             </h1>
