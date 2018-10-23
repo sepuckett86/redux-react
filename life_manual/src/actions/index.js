@@ -1,4 +1,4 @@
-import { SAVE_SECTION, CHANGE_DISPLAY } from './types';
+import { SAVE_SECTION, CHANGE_DISPLAY, ADD_BOOK } from './types';
 
 export function saveSection(section) {
   return {
@@ -11,5 +11,12 @@ export function changeDisplay(display) {
   return {
     type: CHANGE_DISPLAY,
     payload: display
+  }
+}
+
+export function addBook(book) {
+  return {
+    type: ADD_BOOK,
+    payload: book
   }
 }

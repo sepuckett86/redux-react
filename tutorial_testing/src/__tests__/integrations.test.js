@@ -3,6 +3,7 @@ import { mount } from 'enzyme';
 import moxios from 'moxios';
 import Root from 'Root';
 import App from 'components/App';
+import { MemoryRouter } from 'react-router-dom';
 
 let wrapped;
 
@@ -20,8 +21,10 @@ afterEach(() => {
 
 it('can fetch a list of comments and display them', (done) => {
   wrapped = mount(
-    <Root>
-      <App />
+    <Root initialState = {{ auth: true }}>
+      <MemoryRouter initialEntries={[ '/post' ]}>
+        <App />
+      </MemoryRouter>
     </Root>);
   // Find fetch button and click it
   wrapped.find('.fetch-comments').simulate('click');

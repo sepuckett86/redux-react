@@ -3,7 +3,9 @@ import './App.css';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 
+import Home from './Home';
 import SectionList from './SectionList';
+import BookList from './BookList';
 
 class App extends Component {
   constructor(props) {
@@ -13,11 +15,19 @@ class App extends Component {
   renderDisplay() {
     switch(this.props.display) {
       case 'clean':
-        return <div></div>
+        return <div>
+          <Home />
+        </div>
       case 'newBook':
         return (
           <div>
             <SectionList />
+          </div>
+        )
+      case 'viewBooks':
+        return (
+          <div>
+            <BookList />
           </div>
         )
       default:
@@ -29,6 +39,9 @@ class App extends Component {
       this.props.changeDisplay('newBook');
     }
     if (event.target.name === 'viewBookButton') {
+      this.props.changeDisplay('viewBooks');
+    }
+    if (event.target.name === 'home') {
       this.props.changeDisplay('clean');
     }
   }
@@ -36,12 +49,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Life Manual</h1>
+          <button name='home' onClick={this.handleClick} type="button" className='btn btn-clean'>
+            <h1 className="App-title">
+              <span role="img" aria-label="jsx-a11y/accessible-emoji">🌺</span> Life Manual
+            </h1>
+          </button>
         </header>
         <div className="container center">
           <div className="button-bar">
-            <button name='newBookButton' onClick={this.handleClick} className='btn btn-primary'>New Book</button>
-            <button name='viewBookButton' onClick={this.handleClick} className='btn btn-secondary'>View Books</button>
+            <button name='newBookButton' onClick={this.handleClick} className='btn btn-outline-primary'>
+              <span role="img" aria-label="jsx-a11y/accessible-emoji">📕</span> New Book</button>
+            <button name='viewBookButton' onClick={this.handleClick} className='btn btn-outline-success'>
+              <span role="img" aria-label="jsx-a11y/accessible-emoji">📚</span> View Books</button>
           </div>
         </div>
         <div className="container">
