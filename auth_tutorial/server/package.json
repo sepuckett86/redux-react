@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Stephen Grider's tutorial on authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js" 
+  },
+  "author": "Susan Puckett",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.5",
+    "morgan": "^1.9.1"
+  }
+}
