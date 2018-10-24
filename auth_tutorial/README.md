@@ -7,3 +7,8 @@
 5) `mongod` in command line <br />
 6) In server, `npm run dev` <br />
 7) In client, `npm run start` <br />
+
+## Credit
+Made following Stephen Grider's Udemy class:
+Advanced React and Redux: 2018 Edition <br />
+`https://www.udemy.com/react-redux-tutorial/`
