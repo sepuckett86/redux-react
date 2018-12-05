@@ -15,9 +15,9 @@ class SectionList extends Component {
   }
 
   handleClick(event) {
-    const dataKey = event.target.getAttribute('data-key');
+    const dataKey = event.currentTarget.getAttribute('data-key');
     // From Add list to Book list
-    if (event.target.name === 'add') {
+    if (event.currentTarget.name === 'add') {
       // Define section
       const section = this.state.sectionsToAdd.filter(
         section => section.id === dataKey)[0];
@@ -33,7 +33,7 @@ class SectionList extends Component {
       });
     }
     // From Book list to Add list
-    if (event.target.name === 'remove') {
+    if (event.currentTarget.name === 'remove') {
       // Define section
       const section = this.state.sectionsInMyBook.filter(
         section => section.id === dataKey)[0];
@@ -48,7 +48,7 @@ class SectionList extends Component {
         sectionsInMyBook: newMyBook
       });
     }
-    if (event.target.name === 'makeBook') {
+    if (event.currentTarget.name === 'makeBook') {
       const book = {
         sections: this.state.sectionsInMyBook,
         title: this.state.title
@@ -65,26 +65,29 @@ class SectionList extends Component {
   }
 
   renderSections(name) {
-    if (name === 'Sections in My Book') {
+    if (name === 'Sections in My Book' && this.state.sectionsInMyBook.length !== 0) {
       return this.state.sectionsInMyBook.map((section) => {
         return (
-          <button name='remove' key={section.id} data-key={section.id} onClick={this.handleClick} className="list-group-item list-group-item-action flex-column align-items-start">
+          <button name='remove' key={section.id} data-key={section.id}
+          onClick={this.handleClick}
+          className="list-group-item list-group-item-action flex-column align-items-start">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">{section.title}</h5>
             </div>
-
           </button>
         );
       })
     }
-    if (name === 'Sections to Add') {
+    if (name === 'Sections to Add' && this.state.sectionsToAdd.length !== 0) {
       return this.state.sectionsToAdd.map((section) => {
         return (
-          <button type='button' data-trigger='hover' data-toggle="popover" data-content={section.description} name='add' key={section.id} data-key={section.id} onClick={this.handleClick} className="list-group-item list-group-item-action flex-column align-items-start">
+          <button type='button' data-trigger='hover' data-toggle="popover"
+          data-content={section.description} name='add' key={section.id}
+          data-key={section.id} onClick={this.handleClick}
+          className="list-group-item list-group-item-action flex-column align-items-start">
             <div className="d-flex w-100 justify-content-between">
               <h5 className="mb-1">{section.title}</h5>
             </div>
-
           </button>
         );
       })
@@ -94,6 +97,7 @@ class SectionList extends Component {
   render() {
     return (
       <div>
+      {console.log(this.state)}
         <h3>Sections to Add</h3>
             <div className="list-group">
               {this.renderSections('Sections to Add')}
